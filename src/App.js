@@ -3,6 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 import { useState } from 'react';
+import Reducer from './Reducer';
 
 
 function App() {
@@ -186,7 +187,7 @@ const showShal = () =>{
     showCancelButton: true,
     inputValidator: (value) => {
       if (!value) {
-        console.log("value",value);
+        console.log("value",value)
         return 'You need to write something!'
       }
     }
@@ -197,7 +198,14 @@ const showShal = () =>{
   return (
     <div className="App">
 
-      <Formik
+
+
+        <Reducer/>
+
+
+
+
+      {/* <Formik
         initialValues={{ name: '', email: '', profileImage: null }}
         validate={(values) => {
           const error = {}
@@ -266,14 +274,19 @@ const showShal = () =>{
             <br />
             <br />
             <button type='submit' disabled={isSubmitting}>
-              {isSubmitting ? 'Loading...' : 'Submit'} {/* Change text based on submitting state */}
+              {isSubmitting ? 'Loading...' : 'Submit'} {/* Change text based on submitting state 
             </button>
           </Form>
 
 
         )}
 
-      </Formik>
+      </Formik> */}
+
+
+
+
+
       <div>{inputValue}</div>
 
 
